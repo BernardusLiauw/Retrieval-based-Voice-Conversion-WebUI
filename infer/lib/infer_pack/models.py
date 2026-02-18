@@ -598,7 +598,11 @@ class GeneratorNSF(torch.nn.Module):
 #    "48k": 48000,
 #}
 
-sr2sr = {32000: 32, 40000: 40, 48000: 48}
+sr2sr = {
+    "32k": 32000, "40k": 40000, "48k": 48000, # Format lama tetap ada
+    32000: 32, 40000: 40, 48000: 48,          # Format baru untuk Training
+    "32000": 32, "40000": 40, "48000": 48     # Format string untuk keamanan
+}
 
 class SynthesizerTrnMs256NSFsid(nn.Module):
     def __init__(
