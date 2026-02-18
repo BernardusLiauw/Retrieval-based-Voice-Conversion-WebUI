@@ -623,8 +623,8 @@ class SynthesizerTrnMs256NSFsid(nn.Module):
         **kwargs
     ):
         super(SynthesizerTrnMs256NSFsid, self).__init__()
-        if isinstance(sr, str):
-            sr = sr2sr[sr]
+        if isinstance(sr, (str, int)):
+            sr = sr2sr[int(sr)]
         self.spec_channels = spec_channels
         self.inter_channels = inter_channels
         self.hidden_channels = hidden_channels
