@@ -592,12 +592,13 @@ class GeneratorNSF(torch.nn.Module):
         return self
 
 
-sr2sr = {
-    "32k": 32000,
-    "40k": 40000,
-    "48k": 48000,
-}
+#sr2sr = {
+#    "32k": 32000,
+#    "40k": 40000,
+#    "48k": 48000,
+#}
 
+sr2sr = {32000: 32, 40000: 40, 48000: 48}
 
 class SynthesizerTrnMs256NSFsid(nn.Module):
     def __init__(
